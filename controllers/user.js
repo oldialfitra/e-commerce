@@ -6,13 +6,10 @@ const user = require('../models/user'),
 class User {
 
     static login(req, res) {
-        console.log(req.body)
         user.findOne({
                 email: req.body.email
             })
             .then(function(ulogin) {
-                console.log(ulogin)
-                console.log(decrypt(req.body.password, ulogin.password))
                 if (!ulogin) {
                     res.status(404).json({
                         message: 'Username or password wrong'
@@ -24,7 +21,6 @@ class User {
                         })
                     } else {
                         let token = jwt.sign({ email: ulogin.email }, process.env.SECRET)
-                        console.log(token)
                         res.status(200).json(token)
                     }
                 }

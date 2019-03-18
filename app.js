@@ -6,8 +6,8 @@ const express = require('express'),
     env = require('dotenv').config(),
     routerProduct = require('./routes/product'),
     routerUser = require('./routes/user'),
-    routerCart = require('./routes/cart'),
-    mongoose = require('mongoose');
+    routerCart = require('./routes/cart')
+mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost:27017/E-commerce-dev', { useNewUrlParser: true })
 app.use(express.urlencoded({ extended: false }))

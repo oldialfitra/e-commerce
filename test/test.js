@@ -46,7 +46,6 @@ describe('Login User', function() {
                 password: '12345'
             })
             .then(function(response) {
-                // userId = response.body._id
                 response.should.have.status(200)
                 done()
             })
