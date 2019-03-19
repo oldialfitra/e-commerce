@@ -13,12 +13,12 @@ mongoose.set('useFindAndModify', false)
     //     })
     // })
 
-after(function(done) {
-    mongoose.connect('mongodb://localhost:27017/E-commerce-dev', { useNewUrlParser: true }, function() {
-        mongoose.connection.db.dropDatabase()
-        done()
-    })
-})
+// after(function(done) {
+//     mongoose.connect('mongodb://localhost:27017/E-commerce-dev', { useNewUrlParser: true }, function() {
+//         mongoose.connection.db.dropDatabase()
+//         done()
+//     })
+// })
 
 
 let userId = ''
@@ -123,30 +123,30 @@ describe('Create Cart', function() {
     })
 })
 
-describe('Delete Cart', function() {
-    it('should return object', function(done) {
-        chai.request(app).delete(`/carts/${cartId}`)
-            .then(function(response) {
-                // response.status.should.equal(200)
-                response.should.have.status(200)
-                done()
-            })
-            .catch(function(err) {
-                console.log(err)
-            })
-    })
-})
+// describe('Delete Cart', function() {
+//     it('should return object', function(done) {
+//         chai.request(app).delete(`/carts/${cartId}`)
+//             .then(function(response) {
+//                 // response.status.should.equal(200)
+//                 response.should.have.status(200)
+//                 done()
+//             })
+//             .catch(function(err) {
+//                 console.log(err)
+//             })
+//     })
+// })
 
-describe('Delete Product', function() {
-    it('should return object', function(done) {
-        chai.request(app).delete(`/products/${productId}`)
-            .then(function(response) {
-                // response.status.should.equal(200)
-                response.should.have.status(200)
-                done()
-            })
-            .catch(function(err) {
-                console.log(err)
-            })
-    })
-})
+// describe('Delete Product', function() {
+//     it('should return object', function(done) {
+//         chai.request(app).delete(`/products/${productId}`)
+//             .then(function(response) {
+//                 // response.status.should.equal(200)
+//                 response.should.have.status(200)
+//                 done()
+//             })
+//             .catch(function(err) {
+//                 console.log(err)
+//             })
+//     })
+// })
