@@ -9,7 +9,7 @@
        <div class="menu">
           <ul>
             <li>
-              <router-link to="/">
+              <router-link to="/products">
                 <a>Home</a>
               </router-link>
             </li>
@@ -27,6 +27,9 @@
               <router-link to="/login">
                 <a>Login</a>
               </router-link>
+             </li>
+             <li>
+               <button type="button" class="btn btn-secondary" v-on:click="logout">Logout</button>
              </li>
           </ul>
        </div>
@@ -136,3 +139,13 @@ input[type=text]:focus {
     }
 }
 </style>
+
+<script>
+export default {
+  methods: {
+    logout() {
+      localStorage.clear()
+    }
+  },
+}
+</script>

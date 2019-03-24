@@ -1,6 +1,6 @@
 const mongoose = require('mongoose'),
     Schema = mongoose.Schema
-
+    mongoose.connect('mongodb://localhost:27017/E-commerce-dev', { useNewUrlParser: true })
 
 const cartSchema = new Schema({
     userId: {

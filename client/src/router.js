@@ -2,6 +2,9 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
 import List from './views/List.vue';
+import Login from './views/Login.vue';
+import Register from './views/Register.vue';
+
 
 Vue.use(Router);
 
@@ -16,12 +19,12 @@ export default new Router({
   {
     path: '/login',
     name: 'login',
-    component: () => import('./views/Login.vue'),
+    component: Login,
   },
   {
     path: '/register',
     name: 'register',
-    component: () => import('./views/Register.vue'),
+    component: Register,
   },
   {
     path: '/products',

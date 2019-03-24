@@ -1,6 +1,7 @@
 const mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     bcryptjs = require('bcryptjs');
+    mongoose.connect('mongodb://localhost:27017/E-commerce-dev', { useNewUrlParser: true })
 
 const userSchema = new Schema({
     email: String,

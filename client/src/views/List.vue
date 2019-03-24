@@ -1,45 +1,7 @@
 <template>
   <div class="content">
-    <div class="card" style="width: 20rem;">
-      <img class="card-img-top" alt="Card image cap">
-      <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p
-          class="card-text"
-        >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 20rem;">
-      <img class="card-img-top" alt="Card image cap">
-      <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p
-          class="card-text"
-        >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 20rem;">
-      <img class="card-img-top" alt="Card image cap">
-      <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p
-          class="card-text"
-        >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-
-    <div class="card" style="width: 20rem;">
-      <img class="card-img-top" alt="Card image cap">
-      <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p
-          class="card-text"
-        >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
+    <div class="card" style="width: 20rem;" v-for="item in product" v-bind:key="item._id">
+      <card v-bind:allProduct="item"></card>
     </div>
   </div>
 </template>
@@ -77,14 +39,11 @@ export default {
     };
   },
   mounted() {
+    this.product = ''
     axios
-      .get("http://localhost:3000/products")
+      .get("http://localhost:5000/products")
       .then(respond => {
-        // console.log(data[0])
-        // this.product = respond[0].data
-        // console.log(respond.data)
         this.product = respond.data;
-        // console.log(this.product)
       })
       .catch(function(err) {
         console.log(err);

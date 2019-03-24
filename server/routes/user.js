@@ -1,8 +1,8 @@
 const router = require('express').Router(),
-    controllerUser = require('../controllers/user')
+controllerUser = require('../controllers/user')
+console.log('masuk ke routes')
+router.post('/login', controllerUser.loginUser)
 
-router.post('/login', controllerUser.login)
-
-router.post('/register', controllerUser.register)
+router.post('/register', controllerUser.registerUser)
 
 module.exports = router

@@ -2,9 +2,11 @@
     <div class="card" style="width: 20rem;">
         <img class="card-img-top" src="" alt="Card image cap">
             <div class="card-block">
-                <h5 class="card-title">{{abc._id}}</h5>
-                <p class="card-text">{{abc.name}}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title">{{allProduct.name}}</h5>
+                <p class="card-text">{{allProduct.detail}}</p>
+                <p class="card-text">{{allProduct.price}}</p>
+                <a href="#" class="btn btn-primary">Detail</a>
+                <a href="#" class="btn btn-primary">Buy</a>
             </div>
     </div>
 
@@ -20,7 +22,7 @@
 </style>
 <script>
 export default {
-    props: ['abc'],
+    props: ['allProduct'],
     data() {
         return {
             data: ''
