@@ -63,8 +63,9 @@ describe('Product', function() {
         it('should return new Product object', function(done) {
             chai.request(app).post('/products').send({
                     name: 'baru',
+                    image: '',
                     price: 1500,
-                    detail: 'baru masuk'
+                    stock: 8
                 })
                 .then(function(response) {
                     productId = response.body._id

@@ -4,8 +4,9 @@ const mongoose = require('mongoose'),
 
 const productSchema = new Schema({
     name: String,
+    image: String,
     price: Number,
-    detail: String
+    stock: Number,
 })
 
 const Product = mongoose.model('Products', productSchema)

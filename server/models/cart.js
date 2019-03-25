@@ -3,10 +3,7 @@ const mongoose = require('mongoose'),
     mongoose.connect('mongodb://localhost:27017/E-commerce-dev', { useNewUrlParser: true })
 
 const cartSchema = new Schema({
-    userId: {
-        type: Schema.Types.ObjectId,
-        ref: 'Users'
-    },
+    userId: String,
     productId: {
         type: Schema.Types.ObjectId,
         ref: 'Products'

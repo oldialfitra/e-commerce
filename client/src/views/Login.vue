@@ -81,8 +81,7 @@ export default {
   data() {
     return {
       email: "",
-      password: "",
-      token: ""
+      password: ""
     };
   },
   methods: {
@@ -94,16 +93,30 @@ export default {
           password: this.password
         })
         .then(({ data }) => {
-          console.log("masuk login client new");
-          console.log(data);
-          localStorage.setItem("token", data);
-          this.token = data;
+          Swal.fire({
+            type: "success",
+            title: "Logged in",
+            showConfirmButton: false,
+            timer: 1500
+          });
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("id", data.id);
+          localStorage.setItem("role", data.role);
+          this.$emit("logged-in", [true, localStorage.getItem("role")]);
+          // this.$emit('current-role', )
           this.email = "";
           this.password = "";
           this.$router.push("/products");
         })
         .catch(err => {
           console.log(err);
+          Swal.fire({
+            title: err.response.data.message,
+            animation: false,
+            customClass: {
+              popup: "animated tada"
+            }
+          });
         });
     }
   }

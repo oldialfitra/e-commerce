@@ -88,16 +88,28 @@ export default {
       axios
         .post("http://localhost:5000/users/register", {
           email: this.email,
-          password: this.password
+          password: this.password,
+          role: 'user'
         })
         .then(({ data }) => {
-          // console.log('sudah register')
+          Swal.fire({
+            type: "success",
+            title: "Register success",
+            showConfirmButton: false,
+            timer: 1500
+          });
           this.email = "";
           this.password = "";
-          // console.log('masuk')
-          // this.$router.push("/login");
+          this.$router.push("/login");
         })
         .catch(err => {
+          Swal.fire({
+            title: err.response.data.message,
+            animation: false,
+            customClass: {
+              popup: "animated tada"
+            }
+          });
           console.log(err);
         });
     }
