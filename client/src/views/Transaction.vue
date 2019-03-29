@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="content">
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -22,7 +22,9 @@
 </template>
 
 <style scoped>
-
+#content {
+  padding-top: 5rem;
+}
 </style>
 
 
@@ -43,8 +45,8 @@ export default {
         }
       })
       .then(response => {
+        console.log(response.data)
         this.transactions = response.data;
-        console.log(response);
       })
       .catch(err => {
         console.log(err);

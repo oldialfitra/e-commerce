@@ -202,5 +202,11 @@ export default {
       this.role = payload[1]
     }
   },
+  mounted() {
+    if (localStorage.getItem('token')) {
+      this.status = true,
+      this.role = localStorage.getItem('role')
+    }
+  },
 }
 </script>

@@ -64,6 +64,7 @@ class Cart {
             userId: req.params.userId
         }).populate('userId')
             .then(function (carts) {
+                console.log(carts)
                 res.status(200).json(carts)
             })
             .catch(function (err) {

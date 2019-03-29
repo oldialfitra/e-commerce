@@ -22,6 +22,7 @@ class Product {
     static getProducts(req, res) {
         product.find()
             .then(function (products) {
+                console.log(products)
                 res.status(200).json(products)
             })
             .catch(function (err) {
